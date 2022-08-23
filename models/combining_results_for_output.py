@@ -180,10 +180,10 @@ def main(full_dataset=None, epc_df=None):
 	'''
 
 	if full_dataset.empty:
-		full_dataset = pd.read_csv(OUTPUT_PATH+'total_output.csv') 			# loading the full dataset
+		full_dataset = pd.read_csv(OUTPUT_PATH+'combined_epc_ratings.csv') 			# loading the full dataset
 
 	if epc_df.empty:
-		epc_df = pd.read_csv(DATA_PATH+'numerical_individual_columns_data.csv') 			# loading the EPC dataset
+		epc_df = pd.read_csv(DATA_PATH+'cleaned_epc_data.csv') 			# loading the EPC dataset
 
 	total_load, peak_load = calculating_additional_load(full_dataset, epc_df)
 

@@ -39,8 +39,8 @@ def loading_data_from_files():
 			sim (pd.dataframe): df of homes that have a similarity quantification prediction
 	'''
 
-	no_sim = pd.read_csv('outputs/epc/all_predictions_homes_without_sim.csv')
-	sim = pd.read_csv('outputs/epc/all_predictions_homes_with_sim.csv')
+	no_sim = pd.read_csv(OUTPUT_PATH+'epc/all_predictions_homes_without_sim.csv')
+	sim = pd.read_csv(OUTPUT_PATH+'epc/all_predictions_homes_with_sim.csv')
 
 	return no_sim, sim 
 

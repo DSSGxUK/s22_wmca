@@ -1,7 +1,7 @@
 ##############################################################################
 #
 #
-#	DSSG_WMCA/scripts/models/main.py
+#	models/main.py
 #
 #	The full modeling pipeline. Starts by taking the fully processed EPC data
 # 	and merging it with the proxy data to get the 'calculatedAreaValue' and

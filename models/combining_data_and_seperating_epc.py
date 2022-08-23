@@ -40,7 +40,7 @@ def extract_and_concat():
 		RETURNS:
 			tiles_df (pd.dataframe): df containing the data for all the homes in the target area (west midlands)'''
 
-	tiles_df = pd.read_csv(DATA_PATH+'merged_and_encoded_dataframe_diff_encode.csv')
+	tiles_df = pd.read_csv(DATA_PATH+'merged_and_encoded_proxies.csv')
 	return tiles_df
 
 
@@ -50,7 +50,7 @@ def loading_epc():
 		RETURNS:
 			epc_df (pd.dataframe): df containing the epc data'''
 
-	epc_df = pd.read_csv(DATA_PATH+'numerical_individual_columns_data.csv')
+	epc_df = pd.read_csv(DATA_PATH+'cleaned_epc_data.csv')
 
 	return epc_df
 
