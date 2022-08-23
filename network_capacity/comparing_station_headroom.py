@@ -25,7 +25,9 @@ from shapely import wkt
 import inspect
 import gc
 
-DATA_PATH = 'data/processed/'
+SHP_PATH = 'data/shp_files/'
+DATA_PATH = 'data/'
+OUTPUT_PATH = 'outputs/'
 PLOT_PATH = 'plots/'
 
 CONFIG = {
@@ -34,8 +36,8 @@ CONFIG = {
 									'Demand Headroom (MVA)', 'Upstream Demand Headroom', 'geometry']
 							}
 
-properties = pd.read_csv('outputs/additional_load_values.csv')
-stations = pd.read_csv('data/WPD-Network-Capacity-Map-27-07-2022.csv')
+properties = pd.read_csv(OUTPUT_PATH+'additional_load_values.csv')
+stations = pd.read_csv(DATA_PATH+'WPD-Network-Capacity-Map-27-07-2022.csv')
 
 properties['geometry'] = properties.apply(lambda row: Point(row['LONGITUDE'], row['LATITUDE']), axis=1)
 stations['geometry'] = stations.apply(lambda row: Point(row['Longitude'], row['Latitude']), axis=1)
@@ -52,7 +54,7 @@ stations = stations[CONFIG['station_cols_to_keep']]
 # stations.set_index('Network Reference ID', inplace=True)
 
 df3 = gp.GeoDataFrame()
-df2 = gp.GeoDataFrame.from_file('data/wmca_WPD/wmca_primary.shx')
+df2 = gp.GeoDataFrame.from_file(SHP_PATH+'wmca_primary.shx')
 
 df3['Network Reference ID'] = df2['Network_Re']
 df3['Parent Network Reference ID'] = df2['Parent_Net']
@@ -75,7 +77,7 @@ stations = pd.concat([stations, df3], axis=0)
 stations = stations[stations['Asset Type']=='Primary']
 stations.reset_index(drop=True, inplace=True)
 
-primary_polys = gp.GeoDataFrame.from_file('data/wmca_WPD/wmca_primary-area.shp')
+primary_polys = gp.GeoDataFrame.from_file(SHP_PATH+'wmca_primary-area.shp')
 
 primary_polys = primary_polys.to_crs(epsg=31467)
 primary_polys['primary_polygon'] = primary_polys['geometry'].copy()
@@ -103,14 +105,14 @@ primary_polygons = primary_stations.copy()
 
 fig = plt.figure(figsize=(60,55))
 primary_polygons.plot(column = 'load_difference', legend=True, aspect = 'equal')
-plt.savefig('plots/network_capacity/primary_load_test_ver2.png')
+plt.savefig(PLOT_PATH+'primary_load_difference.png')
 
 # print(primary_polygons.columns)
 
 
 print(primary_stations[['Network Reference ID', 'additional_peak_load (MWh)', 'load_difference', 'Demand Headroom (MVA)']])
 
-primary_stations.to_csv('outputs/network_capacity/primary_poly_peak_load.csv', index=False)
+primary_stations.to_csv(OUTPUT_PATH+'primary_poly_peak_load_diff.csv', index=False)
 
 
 
