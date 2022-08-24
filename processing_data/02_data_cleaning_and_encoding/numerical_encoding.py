@@ -13,17 +13,15 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib as mpl
-from pandas_profiling import ProfileReport
 import json
 import pickle
 import requests
 from scipy.stats import pearsonr
 from tqdm import tqdm
 import scipy.stats as stats
-from sklearn.ensemble import RandomForestClassifier
 from sklearn.experimental import enable_iterative_imputer
-from sklearn.impute import KNNImputer, SimpleImputer, IterativeImputer
-from sklearn.model_selection import RepeatedStratifiedKFold, train_test_split, cross_val_score
+from sklearn.impute import IterativeImputer
+from sklearn.model_selection import RepeatedStratifiedKFold, train_test_split
 from sklearn.feature_selection import SelectFromModel
 from sklearn.metrics import accuracy_score
 
@@ -155,17 +153,6 @@ def main(percent_missing_threshold=None, parameters_to_drop=None, imputing_colum
 								'environment-impact-current','co2-emissions-current',
 								'energy-consumption-current']
 
-		# imputing_columns = ['floor-height', 'mainheat-energy-eff', 
-		# 			'glazed-type', 'mainheatcont-description', 'property-type', 'energy-tariff', 'mechanical-ventilation', 'postcode', 
-		# 			'solar-water-heating-flag', 'constituency', 'number-heated-rooms', 'floor-description', 'local-authority', 
-		# 			'built-form', 'number-open-fireplaces', 'windows-description', 'glazed-area', 'mains-gas-flag', 
-		# 			'roof-energy-eff', 'total-floor-area', 'roof-description', 'number-habitable-rooms',  
-		# 			'main-fuel', 'multi-glaze-proportion', 
-		# 			'transaction-type', 'mainheat-description', 'extension-count', 'wind-turbine-count', 'tenure',  
-		# 			'walls-description', 'hotwater-description', 'num_meter', 'total_consumption', 
-		# 			'mean_counsumption', 'median_consumption', 'prop_households_fuel_poor', 'LATITUDE', 'LONGITUDE', 
-		# 			'photo-supply-binary', 'secondheat-description', 'lighting-description']
-
 
 	numeric_method = numeric_processing(df=df, percent_missing_threshold=percent_missing_threshold, 
 												parameters_to_drop=parameters_to_drop, imputing_columns=imputing_columns,
@@ -173,12 +160,6 @@ def main(percent_missing_threshold=None, parameters_to_drop=None, imputing_colum
 
 	processed_dataframe = numeric_processing.process(numeric_method)
 
-	# attrs = (getattr(processed_dataframe, name) for name in dir(processed_dataframe))
-	# print(attrs)
-
-
-	print(processed_dataframe)
-	# print(processed_dataframe.isnull().sum())
 
 
 
@@ -188,17 +169,6 @@ if __name__ == '__main__':
 
 	print('It ran! Good job.')
 
-
-
-# The columns that were removed.
-#
-# ['windows-env-eff', 'lighting-energy-eff','hot-water-env-eff','mainheatc-energy-eff','lighting-env-eff','windows-energy-eff',
-#  'roof-env-eff','walls-energy-eff', 'photo-supply','mainheat-env-eff','current-energy-rating','walls-env-eff', 'lighting-cost-current',
-#  'mainheatc-env-eff', 'hot-water-energy-eff', 'low-energy-lighting','msoa_code', 'lsoa_code', 'percentage-low-energy-lighting']
-#
-#
-# 'floor-thermal-transmittance', 'walls-thermal-transmittance', 'roof-thermal-transmittance', 
-#
 
 
 

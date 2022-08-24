@@ -25,7 +25,6 @@ class EncodingCategorical():
 	def encode_categorical(self):
 		self.cat_var = self.df.select_dtypes(include= ['object']).columns.tolist()
 
-		print(self.cat_var)
 		# High missing values 
 		self.df.drop(columns=['floor-level'], inplace=True)
 		self.cat_var.remove('floor-level')
@@ -56,25 +55,11 @@ class EncodingCategorical():
 
 		# Define non-ordinal categories
 		self.ordinal_var = ranked_var + ['construction-age-band', 'glazed-area']
-		print('Ordinal Var: '+str(self.ordinal_var))
-		print('Len ordinal var: '+str(len(self.ordinal_var)))
 		non_ordinal_var = [col for col in self.cat_var if col not in self.ordinal_var]
-
-		print('Non-Ordinal Var: '+str(non_ordinal_var))
-		print('Len non-ordinal var: '+str(len(non_ordinal_var)))
-		# non_ordinal_var.remove('mainheat-description')
 
 		# Visualising cardinality to prevent code breaking
 		cardinality = self.df[non_ordinal_var].nunique()
 		
-		# fig = plt.figure(figsize=(20,10))
-		# plt.bar(cardinality)
-		# plt.set_xlabel('Variable')
-		# plt.set_ylabel('Number of unique values')
-		# plt.savefig(self.PLOT_PATH, 'cardinality_hist.png')
-		
-		input('Check cardinality to continue. Edit nunique limit as necessary.')
-
 		self.encode_non_ordinal(non_ordinal_var)
 
 	def encode_non_ordinal(self, non_ordinal_var, nunique_limit=18):
@@ -87,10 +72,6 @@ class EncodingCategorical():
 				one_hot_encoded = one_hot_encoded.add_prefix(str(var+'_'))
 				self.df = pd.concat([self.df, one_hot_encoded], axis=1)
 				self.df.drop(var, inplace=True, axis=1)
-				# self.df[var] = one_hot_encoded.to_numpy().tolist()
-				# print(self.df[var])
-				# self.df[var][mask] = np.nan
-				# print(self.df[var][mask])
 			# High cardinality will break code
 			elif self.df[var].isna().sum() == 0:
 				label_encoder = LabelEncoder()
@@ -107,16 +88,15 @@ class EncodingCategorical():
 		self.encode_datetime()
 		self.encode_categorical()
 
-		print(self.df.columns.tolist())
-
 		return self.df
 
 def main(df, PLOT_PATH):
 	cleaning = EncodingCategorical(df, PLOT_PATH)
 	attrs = (getattr(cleaning, name) for name in dir(cleaning))
-	# methods = ifilter(inspect.ismethod, attrs)
-	# for method in methods:
-	# 	method()
+
 
 if __name__ == "__main__":
 	main()
+
+
+	
