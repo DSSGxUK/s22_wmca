@@ -26,19 +26,19 @@ I successfully ran the code on my local Windows machine. However, the licensed O
 solar pv
 ├── 00_compare_grid   
 │   ├── compare_grid.ipynb	            
-│   ├── DSM_grid.txt	                # DSM tiles received from Defra
-│   ├── osmapFileName.txt	            # Ordinance Survey data for West Midlands
-│   ├── os_mapping.pkl	                # Dictionary to map building footprint files and DSM data
+│   ├── DSM_grid.txt                    # DSM tiles received from Defra
+│   ├── osmapFileName.txt               # Ordinance Survey data for West Midlands
+│   ├── os_mapping.pkl                  # Dictionary to map building footprint files and DSM data
 │   └── missing_tiles.txt               # Areas in West Midlands not covered by DSM
 ├── 01_calc_shadow              
-│   ├── temp	                        # Auto-created to store temp files
-│   ├── output	                        # Auto-created to store outputs
+│   ├── temp                            # Auto-created to store temp files
+│   ├── output                          # Auto-created to store outputs
 │   │   ├── roof_segments	    
 │   │   ├── roof_segments_unfiltered
 │   │   └── no_DSM
-│   ├── shading_with_DSM.py	            # Roof segmentation & shading
-│   ├── shading_without_DSM.py	        # Pseudo-DSM & shading
-│   └── launch.bat	                    # Runs OSGeo Shell
+│   ├── shading_with_DSM.py             # Roof segmentation & shading
+│   ├── shading_without_DSM.py          # Pseudo-DSM & shading
+│   └── launch.bat                      # Runs OSGeo Shell
 ├── 02_calc_pv_output                   # PV output estimates
 │   ├── output                          # Stores csv outputs
 │   ├── MCS_output.py	
