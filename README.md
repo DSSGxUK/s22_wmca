@@ -38,6 +38,7 @@ s22_wmca
 │       ├── epc
 │       └── mainheat
 ├── network_capacity
+│   ├── additional_load_calc.py	                        # Calculates total additional load and additional peak laod for each home
 │   ├── aggregating_points_into_shape_files.py	        # Calculates total additional load for different station levels
 │   ├── comparing_station_headroom.py			        # Compares total additional loads to substation demand headrooms
 │   ├── data
