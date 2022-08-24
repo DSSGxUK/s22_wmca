@@ -45,10 +45,10 @@ for path in glob.glob(TOPOLOGY_DIR+’*’):
 ## Folder structure
 ```bash
 data
-├── raw                                                 # Pulled EPC data
-├── processed                                           # Processed EPC data
+├── raw                                   # Pulled EPC data
+├── processed                             # Processed EPC data
 │     └── encoded_proxies
-└── output                                              # Final outputs	
+└── output                                # Final outputs	
 processing_data
 ├── 01_merge_EPC_energy_consumption.py	                  
 ├── 02_data_preprocessing
@@ -60,7 +60,7 @@ processing_data
 │   └── main.py
 ├── 03_get_proxies.py	
 ├── notebooks	
-└── plots	                                              # Saved plots from notebooks
+└── plots	                                # Saved plots from notebooks
     
 ```
 
