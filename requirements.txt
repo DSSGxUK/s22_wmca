@@ -1,6 +1,7 @@
 absl-py==1.1.0
 astunparse==1.6.3
 attrs==21.4.0
+beautifulsoup4==4.11.1
 blurhash==1.1.4
 boost==0.1
 cachetools==5.2.0
