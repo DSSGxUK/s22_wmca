@@ -1,4 +1,4 @@
-# Pull Data
+# Processing Data
 
 ## Getting EPC data
 EPC ratings were introduced in stages from 2007 and cover residential and non-residential buildings. A buildings will have an EPC rating if it has been built, sold or rented after 2008.  Following our scope, we are only looking at the EPC ratings for residential buildings.
