@@ -12,7 +12,7 @@ Requires the output from the EPC and heating type predictions, as well as either
   - `../data/processed/cleaned_epc_data.csv` 
   - `data/raw/demanddata2017.csv`
 If running after processing the data through the `models` folder, skip to the `aggregating_points_into_shape_files.py` file to get just the total additional peak load for each area. Or the `comparing_station_headroom.py` file to get the comparison between teh additional peak load and the demand headroom for the primary station layer. These two files require the output from either the `models` folder, or the output from `additional_load_calc.py` file. In addition, the following files are required:
-  - `data/shp_files/wmca_distribution-area.shp
+  - `data/shp_files/wmca_distribution-area.shp`
   - `data/shp_files/wmca_primary-area.shp`
   - `data/shp_files/wmca_GSP.shp`
   - `data/shp_files/wmca_BSP.shp`
