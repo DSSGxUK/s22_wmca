@@ -3,7 +3,7 @@
 ## Getting EPC data
 EPC ratings were introduced in stages from 2007 and cover residential and non-residential buildings. A buildings will have an EPC rating if it has been built, sold or rented after 2008.  Following our scope, we are only looking at the EPC ratings for residential buildings.
 
-We will use the EPC data to (1) determine which property features are most predictive of energy efficiency and (2) build a labelled dataset with the known EPC ratings and heating types. For more details see [here](https://github.com/DSSGxUK/s22_wmca/blob/main/technical_docs/01A_GettingProxies.pdf).
+We will use the EPC data to (1) determine which property features are most predictive of energy efficiency and (2) build a labelled dataset with the known EPC ratings and heating types. For more details see [our technical notes](https://github.com/DSSGxUK/s22_wmca/blob/main/technical_docs/01A_Getting_Proxies.pdf).
 
 ### Installations
 - [requests](https://pypi.org/project/requests/) to pull from API.
@@ -18,7 +18,7 @@ We will use the EPC data to (1) determine which property features are most predi
 5. Run `main.py` from `02_data_preprocessing` from the folder.
 
 ## Getting proxies
-The following creates the data required to predict EPC ratings, estimate solar PV output and determine heat pump capacity. The final output from the process outlined in this document will be a series of .geojson files while another set of files will be encoded and saved as .csv for model training. For more details see [here]().
+The following creates the data required to predict EPC ratings, estimate solar PV output and determine heat pump capacity. The final output from the process outlined in this document will be a series of .geojson files while another set of files will be encoded and saved as .csv for model training. For more details see our [technical notes](https://github.com/DSSGxUK/s22_wmca/blob/main/technical_docs/01B_Preparing_EPC_Data.pdf).
 
 ### Data
 1. [OS MasterMap Topography Layer](https://www.ordnancesurvey.co.uk/business-government/products/mastermap-topography): building footprints (format: `5882272-{tilename}.gml`)
