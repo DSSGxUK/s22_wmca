@@ -82,29 +82,15 @@ class CleaningNumericData():
 			self.imputing_columns = self.df.select_dtypes(exclude=['object']).columns.tolist()
 
 
-	def splitting_into_train_and_test(self):
+	def splitting_into_numeric_and_categorical(self):
 		print('splitting into train and test....')
 
-		# splitting the training and testing set
-		self.X_train, self.X_test, self.y_train, self.y_test = train_test_split(self.df, self.target, test_size=self.test_size, random_state=self.random_int, stratify=self.target)
-		
-		self.y_train.reset_index(inplace=True, drop=True)
-		self.y_test.reset_index(inplace=True, drop=True)
-		self.X_train.reset_index(inplace=True, drop=True)
-		self.X_test.reset_index(inplace=True, drop=True)
 		# segmenting the columns that we don't want to impute
-		cat_train = self.X_train.drop(self.imputing_columns, axis=1)
-		cat_test = self.X_test.drop(self.imputing_columns, axis=1)
-		cat_train['current-energy-rating'] = self.y_train
-		cat_test['current-energy-rating'] = self.y_test
-
-		# putting the data back together so we can concatinate it with the imputed data
-		self.catagorical = pd.concat([cat_train, cat_test], axis=0).reset_index(drop=True)
+		self.cat = self.df.drop(self.imputing_columns, axis=1)
+		self.cat['current-energy-rating'] = self.target
 
 		# getting the columns we want to impute
-		self.X_train = self.X_train[self.imputing_columns]
-		self.X_test = self.X_test[self.imputing_columns]
-
+		self.numeric = self.df[self.imputing_columns]
 
 	
 	def iterative_imputing(self):
@@ -123,22 +109,18 @@ class CleaningNumericData():
 			RETURNS:
 				df (pd.df): combined dataframe containing the imputed data.
 		'''
-		self.splitting_into_train_and_test()
+		self.splitting_into_numeric_and_categorical()
 
 		print('iterative imputing....')
 		imp = IterativeImputer(verbose=1, random_state=self.random_int)		# initalizing the imputer
-		imp.fit(self.X_train)													# fitting the imputer on the dataframe
-		self.X_train = imp.transform(self.X_train)									# transforming the df on the fit imputer
-		self.X_test = imp.transform(self.X_test)										# transforming the df on the fit imputer
-
-		# putting the testing and training data back together for saving as a csv. 
-		X = np.concatenate((self.X_train, self.X_test),axis=0)
+		imp.fit(self.numeric)													# fitting the imputer on the dataframe
+		self.numeric = imp.transform(self.numeric)									# transforming the df on the fit imputer
 
 		# turning it into a dataframe
-		numeric = pd.DataFrame(X, columns=self.imputing_columns)
+		numeric = pd.DataFrame(self.numeric, columns=self.imputing_columns)
 
 		# putting the imputed columns back together with teh non-imputed columns
-		self.df = pd.concat([self.catagorical, numeric], axis=1, ignore_index=False)
+		self.df = pd.concat([self.cat, numeric], axis=1, ignore_index=False)
 
 
 	def process(self):
