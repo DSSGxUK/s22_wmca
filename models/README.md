@@ -1,6 +1,6 @@
 # Training Models and Getting Predictions
     
-Running this set of scripts will take the proceessed data created in the data_preprocessing files and runs it through both a Similarity Quantification model and a Random Forest model. The results are then combined and the calculation for the additional load on the electricity network is perfromed. 
+Running this set of scripts will take the proceessed data created in the data_preprocessing files and runs it through both a Similarity Quantification model and a Random Forest model. The results are then combined and the calculation for the additional load on the electricity network is perfromed. For more details, read the [technical notes](https://github.com/DSSGxUK/s22_wmca/blob/main/technical_docs/02_EPC_heating_type_predictions.pdf).
 
 ## Scripts
 
