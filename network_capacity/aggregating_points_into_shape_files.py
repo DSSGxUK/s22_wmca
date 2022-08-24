@@ -68,10 +68,7 @@ primary_df.columns = ['geometry', 'additional_peak_load']
 primary_df['geometry'] = gp.GeoSeries.from_wkt(primary_df['geometry'])
 primary_df = gp.GeoDataFrame(primary_df, crs=4326, geometry='geometry')
 
-fig = plt.figure(figsize=(60,55))
 primary_df.plot(column = 'additional_peak_load', legend=True, aspect='equal')
-plt.xticks(fontsize=20)
-plt.yticks(fontsize=20)
 plt.savefig(PLOT_PATH+'primary_peak_agg.png')
 primary_df.to_csv(OUTPUT_PATH+'primary_peak_agg.csv', index=False)
 

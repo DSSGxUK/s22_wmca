@@ -39,7 +39,6 @@ from sklearn.metrics import precision_recall_curve, f1_score, auc, roc_curve, co
 
 from tensorflow.keras.utils import to_categorical
 
-import modelfunction as mf
 import inspect
 import gc
 
