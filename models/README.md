@@ -45,37 +45,28 @@ at the beginning of each file. Outputs are saved to `outputs/` and models are sa
 
 
 ```bash
-data
-├── external                                            # Data downloaded from other sources
+data   
+├── raw                                                 # Pulled EPC data
 │   ├── building_height	        
 │   ├── landbaseprem	            
 │   ├── topology	                  
 │   ├── ONSUD_AUG_2022_WM.csv    
 │   ├── LSOA_domestic_elect_2010-20.xlsx
-│   └── sub-regional-fuel-poverty-2022-tables.xlsx   
-├── raw                                                 # Pulled EPC data
+│   └── sub-regional-fuel-poverty-2022-tables.xlsx
 ├── processed                                           # Processed EPC data
 └── output                                              # Final outputs	
 	├── epc
-	├── mainheat
-pull_data
-├── 01_get_EPC.py	                  
-├── 02_data_preprocessing
-│   ├── 01_data_cleaning.py
-│   ├── 02_cleaning_categorical_data.py
-│   ├── 03_CHAID.py
-│   └── 04_encoding_categorical.py	    
-├── 03_get_proxies.py	
-├── notebooks	
-└── plots	                                              # Saved plots from notebooks
+	├── mainheat	                                              # Saved plots from notebooks
 models
 ├── main.py
 ├── combining_data_and_seperating_epc.py
 ├── similarity_quantification_model.py
 ├── multiclass_randomforest.py
 ├── combining_SQ_and_Randomforest_models.py
-└── combining_results_for_output.py
-    
+├── combining_results_for_output.py
+└── models
+    ├── epc
+    └── mainheat
 ```
 
 
