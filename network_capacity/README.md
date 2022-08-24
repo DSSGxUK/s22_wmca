@@ -2,7 +2,7 @@
 
 As the world transitionas away from fossil fuels as a source of energy, one of the most often overlooked pieces of the puzzle is the electrical grid. Transitioning away from using gas and other non-electric heating sources to more efficient heat pumps, the electrical network will be put under increased strain. Here an attempt was made to calculate the additional peak strain in a particular area, and to compare it to the current demand headroom for the substations serving that area. 
 
-Many assumptions were made here in doing these calculations. For a discussion of those assumptions and details about how the calculation was performed see ().
+Many assumptions were made here in doing these calculations. For a discussion of those assumptions and details about how the calculation was performed see the [technical documentation](https://github.com/DSSGxUK/s22_wmca/blob/main/technical_docs/03_Network_Capacity.pdf).
 
 ### Data
 Requires the output from the EPC and heating type predictions, as well as either the total-floor-area or the floor-footprint-area. If running these files without having gone through the modeling process, begin with the `additional_load_calc.py` file. Will require:
