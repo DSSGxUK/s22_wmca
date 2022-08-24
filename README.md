@@ -55,10 +55,10 @@ python3 processing_data/01_merge_EPC_energy_consumption.py
 ```
 This file pulls and merges the publically avaliable data. This is designed for the West Midlands geographic area. If another area is desired, the `WMCA_councils.txt` file should be modified to reflect the area of interest. Pulling the EPC data requires an API key. These are available for free with registration [here](https://epc.opendatacommunities.org/#register). The API key can be saved in an external file (reccommended) or manually input into the file (not recommended for security reasons). `01_merge_EPC_energy_consumption.py` will ouput the pulled and merged EOC data and save it as `data/processed/pre_clean_merged_epc_data.csv`. This will be used when running the cleaning and encoding file. This file can take time to run which will scale with the number of local authorities that are being pulled.
 
-After `processing_data/01_merge_EPC_energy_consumption.py` has completed, the next file to run will be `processing_data/02_data_cleaning_and_encoding/06_main.py` which sequentially runs all of the other files in this folder. To run:
+After `processing_data/01_merge_EPC_energy_consumption.py` has completed, the next file to run will be `processing_data/02_data_cleaning_and_encoding/main.py` which sequentially runs all of the other files in this folder. To run:
 
 ```bash
-python3 processing_data/02_data_cleaning_and_encoding/06_main.py
+python3 processing_data/02_data_cleaning_and_encoding/main.py
 ```
 The README file in the folder expalins in more detail each of the files. In short, these files clean, encode, and impute the merged data so it is ready for training a machine learning model. This file will output `data/processed/cleaned_epc_data.csv` as the final file, though it will output files after each class is called to be used for comparison and checkpointing. 
 
@@ -76,7 +76,7 @@ Scripts in this section should be run from the main directory. After the data ha
 ```bash
 python3 models/06_main.py
 ```
-The individual files can be run if desired. The main file will output a combined csv file which contains the predicted and real EPC data. This file will contain the ratings (A-G and 0-100), the predicted heating type (0 for non-electric or 1 for electric), a level of confidence for the predictions, a level of confidence for the EPC ratings being withing one rating of teh predicted value, and the calculated additional load the home will put on the electrical network if it converts from a non-electical heating source to an electrical one. This value will be used in the network_capactiy files. The models will be saved in the `models/models/` folder. The user could consider changing the hyperparameters used in the RandomForest model. Due to computational constraints, the model used in our project only had 200 n_estimators. Performance could be improved by increasing the n-estimators. 
+The individual files can be run if desired. The main file will output a combined csv file which contains the predicted and real EPC data. This file will contain the ratings (A-G and 0-100), the predicted heating type (0 for non-electric or 1 for electric), a level of confidence for the predictions, a level of confidence for the EPC ratings being withing one rating of teh predicted value, and the calculated additional load the home will put on the electrical network if it converts from a non-electical heating source to an electrical one. This value will be used in the network_capactiy files. The models will be saved in the `models/models/` folder. The user could consider changing the hyperparameters used in the RandomForest model. Due to computational constraints, the model used in our project only had 200 n_estimators. Performance could be improved by increasing the n_estimators to 1000 or more if user has the capacity. 
 
 
 ## Network Capacity
