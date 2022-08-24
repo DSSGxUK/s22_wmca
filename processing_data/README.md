@@ -3,7 +3,7 @@
 ## Getting EPC data
 EPC ratings were introduced in stages from 2007 and cover residential and non-residential buildings. A buildings will have an EPC rating if it has been built, sold or rented after 2008.  Following our scope, we are only looking at the EPC ratings for residential buildings.
 
-We will use the EPC data to (1) determine which property features are most predictive of energy efficiency and (2) build a labelled dataset with the known EPC ratings and heating types. For more details see [here](https://github.com/DSSGxUK/s22_wmca/blob/main/processing_data/GettingProxies.pdf).
+We will use the EPC data to (1) determine which property features are most predictive of energy efficiency and (2) build a labelled dataset with the known EPC ratings and heating types. For more details see [here](https://github.com/DSSGxUK/s22_wmca/blob/main/technical_docs/01A_GettingProxies.pdf).
 
 ### Installations
 - [requests](https://pypi.org/project/requests/) to pull from API.
