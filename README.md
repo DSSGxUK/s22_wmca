@@ -22,23 +22,23 @@ processing_data
 │   ├── data_cleaning.py                                # initial cleaning
 │   ├── cleaning_categorical_data.py                    # making categories uniform
 │   ├── CHAID.py                                        # grouping categories
-│   ├── encoding_categorical.py							# encoding categorical variables
-│   ├── numerical_encoding.py							# encoding and imputing numerical variables
-│   └── main.py											# calls all functions in proper sequence
+│   ├── encoding_categorical.py						# encoding categorical variables
+│   ├── numerical_encoding.py						# encoding and imputing numerical variables
+│   └── main.py										# calls all functions in proper sequence
 ├── 03_get_proxies.py	
 └── plots	                                            # Saved plots from this sub-directory
 models
-├──combining_data_and_seperating_epc.py 				# attaches the proxies to the EPC data
-├──similarity_quantification_model.py					# runs the similarity quantification model
-├──multiclass_randomforest.py							# runs the multiclass random forest and the regression RF
-├──combining_SQ_and_RandomForest_models.py				# combines the SQ and RF models based on a set of criteria
-├──combining_results_for_output.py						# combines all results and calculates the additional load
-└── models												# folder for storing the trained random forest models
+├──combining_data_and_seperating_epc.py 			# attaches the proxies to the EPC data
+├──similarity_quantification_model.py				# runs the similarity quantification model
+├──multiclass_randomforest.py						# runs the multiclass random forest and the regression RF
+├──combining_SQ_and_RandomForest_models.py			# combines the SQ and RF models based on a set of criteria
+├──combining_results_for_output.py					# combines all results and calculates the additional load
+└── models											# folder for storing the trained random forest models
 network_capacity
-├──aggregating_points_into_shape_files.py				# calculates the total additional load for the differnet station levels
-├──comparing_station_headroom.py						# compares the total additional loads to the substation demand headrooms
+├──aggregating_points_into_shape_files.py			# calculates the total additional load for the differnet station levels
+├──comparing_station_headroom.py					# compares the total additional loads to the substation demand headrooms
 ├──data
-│   └──shp_files										# stores the shp files
+│   └──shp_files									# stores the shp files
 ├──plots
 └──outputs
 solar pv
