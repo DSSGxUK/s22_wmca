@@ -45,23 +45,19 @@ for path in glob.glob(TOPOLOGY_DIR+’*’):
 ## Folder structure
 ```bash
 data
-├── external                                            # Data downloaded from other sources
-│   ├── building_height	        
-│   ├── landbaseprem	            
-│   ├── topology	                  
-│   ├── ONSUD_AUG_2022_WM.csv    
-│   ├── LSOA_domestic_elect_2010-20.xlsx
-│   └── sub-regional-fuel-poverty-2022-tables.xlsx   
 ├── raw                                                 # Pulled EPC data
 ├── processed                                           # Processed EPC data
+│     └── encoded_proxies
 └── output                                              # Final outputs	
-pull_data
-├── 01_get_EPC.py	                  
+processing_data
+├── 01_merge_EPC_energy_consumption.py	                  
 ├── 02_data_preprocessing
 │   ├── 01_data_cleaning.py
 │   ├── 02_cleaning_categorical_data.py
 │   ├── 03_CHAID.py
-│   └── 04_encoding_categorical.py	    
+│   ├── 04_encoding_categorical.py
+│   ├── 05_numerical_encoding.py
+│   └── 06_main.py
 ├── 03_get_proxies.py	
 ├── notebooks	
 └── plots	                                              # Saved plots from notebooks
