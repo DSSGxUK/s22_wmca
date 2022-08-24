@@ -23,7 +23,7 @@ from sklearn.ensemble import RandomForestClassifier
 DATA_PATH = 'data/processed/'		# path to the data from the project directory
 OUTPUT_PATH = 'outputs/'
 '''CONFIG dict storing global information. 
-	random_int: integer setting the reandom seed for reproducibility.
+	random_int: integer setting the random seed for reproducibility.
 '''
 CONFIG = {
 		'random_int': 123

@@ -85,9 +85,6 @@ def main():
 	print('Training the EPC Random Forest Model....')
 	RF_SQ_results = RFM.main(epc, SQ_results, target='current-energy-rating', predicting='epc', saved_file_name='epc_predictions_homes_with_sim', to_fit=True, file_path=None)
 
-	# print('Predicting the EPC Random Forest Model and predicting on homes without similarities....')
-	# no_sim = RFM.main(train_df=pd.DataFrame(), test_df=no_sim, target='current-energy-rating', predicting='epc', saved_file_name='epc_predictions_homes_without_sim', to_fit=False, file_path=None)
-
 	print('Comparing and combining the SQ and RF models....')
 	combined_df = combining_models.main(RF_SQ_results)
 
@@ -96,8 +93,6 @@ def main():
 
 	print('Combining the final results and calculating the additional loads....')
 	full_dataset = combining_results.main(full_dataset=combined_df, epc_df=epc)
-
-	print(full_dataset.isnull().sum())
 
 
 
