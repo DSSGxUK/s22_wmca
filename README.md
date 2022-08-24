@@ -6,65 +6,66 @@ This main README file will take the user through setting up the virtual environm
 
 ## Folder structure
 ```bash
-data
-├── raw                                           # Data downloaded from other sources
-│   ├── building_height	                          
-│   ├── landbaseprem	            
-│   ├── topology	                  
-│   ├── ONSUD_AUG_2022_WM.csv    
-│   ├── LSOA_domestic_elect_2010-20.xlsx
-│   └── sub-regional-fuel-poverty-2022-tables.xlsx   
-├── processed                                           # Processed EPC data
-└── output                                              # Final outputs	
-processing_data
-├── 01_merge_EPC_energy_consumption.py	                # pulling and merging external files   
-├── 02_data_preprocessing
-│   ├── data_cleaning.py                                # initial cleaning
-│   ├── cleaning_categorical_data.py                    # making categories uniform
-│   ├── CHAID.py                                        # grouping categories
-│   ├── encoding_categorical.py		                    # encoding categorical variables
-│   ├── numerical_encoding.py		                    # encoding and imputing numerical variables
-│   └── main.py						                    # calls all functions in proper sequence
-├── 03_get_proxies.py	
-└── plots	                                             # Saved plots from this sub-directory
-models
-├──combining_data_and_seperating_epc.py     # attaches the proxies to the EPC data
-├──similarity_quantification_model.py	    # runs the similarity quantification model
-├──multiclass_randomforest.py			    # runs the multiclass random forest and the regression RF
-├──combining_SQ_and_RandomForest_models.py	# combines the SQ and RF models based on a set of criteria
-├──combining_results_for_output.py		    # combines all results and calculates the additional load
-└── models								    # folder for storing the trained random forest models
-network_capacity
-├──aggregating_points_into_shape_files.py	# calculates the total additional load for the differnet station levels
-├──comparing_station_headroom.py			# compares the total additional loads to the substation demand headrooms
-├──data
-│   ├──raw
-│   └──shp_files						# stores the shp files
-├──plots
-└──outputs
-solar pv
-├── 00_compare_grid   
-│   ├── compare_grid.ipynb	            
-│   ├── DSM_grid.txt	                # DSM tiles received from Defra
-│   ├── osmapFileName.txt	            # Ordinance Survey data for West Midlands
-│   ├── os_mapping.pkl	                # Dictionary to map building footprint files and DSM data
-│   └── missing_tiles.txt               # Areas in West Midlands not covered by DSM
-├── 01_calc_shadow              
-│   ├── temp	                        # Auto-created to store temp files
-│   ├── output	                        # Auto-created to store outputs
-│   │   ├── roof_segments	    
-│   │   ├── roof_segments_unfiltered
-│   │   └── no_DSM
-│   ├── shading_with_DSM.py	            # Roof segmentation & shading
-│   ├── shading_without_DSM.py	        # Pseudo-DSM & shading
-│   └── launch.bat	                    # Runs OSGeo Shell
-├── 02_calc_pv_output                   # PV output estimates
-│   ├── output                          # Stores csv outputs
-│   ├── MCS_output.py	
-│   └── pvlib_output.py
-└── 03_test_pv_output					
-    └── pv_test_set.ipynb  
-
+s22_wmca
+├── data
+│   ├── raw                                             # Data downloaded from other sources
+│   │   ├── building_height	                          
+│   │   ├── landbaseprem	            
+│   │   ├── topology	                  
+│   │   ├── ONSUD_AUG_2022_WM.csv    
+│   │   ├── LSOA_domestic_elect_2010-20.xlsx
+│   │   └── sub-regional-fuel-poverty-2022-tables.xlsx   
+│   ├── processed                                       # Processed EPC data
+│   └── output                                          # Final outputs	
+├── processing_data
+│   ├── 01_merge_EPC_energy_consumption.py              # Pulling and merging external files   
+│   ├── 02_data_preprocessing
+│   │   ├── data_cleaning.py                            # Initial cleaning
+│   │   ├── cleaning_categorical_data.py                # Making categories uniform
+│   │   ├── CHAID.py                                    # Grouping categories
+│   │   ├── encoding_categorical.py                     # Encoding categorical variables
+│   │   ├── numerical_encoding.py                       # Encoding and imputing numerical variables
+│   │   └── main.py	                                    # Calls all functions in proper sequence
+│   ├── 03_get_proxies.py	
+│   └── plots                                           # Saved plots from this sub-directory
+├── models
+│   ├── combining_data_and_seperating_epc.py            # Attaches proxies to EPC data
+│   ├── similarity_quantification_model.py	            # Runs similarity quantification model
+│   ├── multiclass_randomforest.py			            # Runs multiclass random forest and regression RF
+│   ├── combining_SQ_and_RandomForest_models.py	        # Combines SQ and RF models based on a set of criteria
+│   ├── combining_results_for_output.py		            # Combines all results and calculates additional load
+│   └── models								            # Folder for storing trained random forest models
+├── network_capacity
+│   ├── aggregating_points_into_shape_files.py	        # Calculates total additional load for different station levels
+│   ├── comparing_station_headroom.py			        # Compares total additional loads to substation demand headrooms
+│   ├── data
+│   │   ├── raw
+│   │   └── shp_files                                   # Stores shp files
+│   ├── plots
+│   └── outputs
+├── solar pv
+│   ├── 00_compare_grid   
+│   │   ├── compare_grid.ipynb	            
+│   │   ├── DSM_grid.txt	                            # DSM tiles received from Defra
+│   │   ├── osmapFileName.txt	                        # Ordinance Survey data for West Midlands
+│   │   ├── os_mapping.pkl	                            # Dictionary to map building footprint files and DSM data
+│   │   └── missing_tiles.txt                           # Areas in West Midlands not covered by DSM
+│   ├── 01_calc_shadow              
+│   │   ├── temp	                                    # Auto-created to store temp files
+│   │   ├── output	                                    # Auto-created to store outputs
+│   │   │   ├── roof_segments	    
+│   │   │   ├── roof_segments_unfiltered
+│   │   │   └── no_DSM
+│   │   ├── shading_with_DSM.py	                        # Roof segmentation & shading
+│   │   ├── shading_without_DSM.py	                    # Pseudo-DSM & shading
+│   │   └── launch.bat	                                # Runs OSGeo Shell
+│   ├── 02_calc_pv_output                               # PV output estimates
+│   │   ├── output                                      # Stores csv outputs
+│   │   ├── MCS_output.py	
+│   │   └── pvlib_output.py
+│   └── 03_test_pv_output					
+│       └── pv_test_set.ipynb  
+├── technical_docs                                      # All technical documentation for project
     
 ```
 
