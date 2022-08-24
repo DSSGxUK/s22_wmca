@@ -55,8 +55,8 @@ data
 │   └── sub-regional-fuel-poverty-2022-tables.xlsx
 ├── processed                                           # Processed EPC data
 └── output                                              # Final outputs	
-	├── epc
-	├── mainheat	                                              # Saved plots from notebooks
+    ├── epc
+    └── mainheat	                                              # Saved plots from notebooks
 models
 ├── main.py
 ├── combining_data_and_seperating_epc.py
