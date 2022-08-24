@@ -38,6 +38,7 @@ network_capacity
 ├──aggregating_points_into_shape_files.py	# calculates the total additional load for the differnet station levels
 ├──comparing_station_headroom.py			# compares the total additional loads to the substation demand headrooms
 ├──data
+│   ├──raw
 │   └──shp_files						# stores the shp files
 ├──plots
 └──outputs
