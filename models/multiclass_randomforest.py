@@ -24,7 +24,7 @@ import gc
 
 DATA_PATH = 'data/processed/'		# path to the data from the project directory
 OUTPUT_PATH = 'outputs/'
-MODEL_PATH = 'models/'
+MODEL_PATH = 'models/trained_models/'
 
 '''CONFIG dict storing global information. 
 	random_int: integer setting the reandom seed for reproducibility.

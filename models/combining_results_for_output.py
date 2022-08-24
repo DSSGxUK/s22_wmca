@@ -14,6 +14,11 @@
 
 import pandas as pd
 import numpy as np
+import geopandas as gpd
+import geopandas.tools
+from shapely.geometry import Point
+from shapely import wkt
+import rtree
 
 
 '''CONFIG dict storing global information. 
@@ -199,6 +204,11 @@ def main(full_dataset=None, epc_df=None):
 	full_dataset = full_dataset[CONFIG['features_to_keep']] 					# keeping only the realevent features
 
 	full_dataset.to_csv(OUTPUT_PATH+'full_dataset_outputs.csv', index=False)		# saving the dataset
+
+	full_dataset['geometry'] = full_dataset.apply(lambda row: Point(row['LONGITUDE'], row['LATITUDE']), axis=1)
+
+	gdf = gpd.GeoDataFrame(full_dataset, geometry='geometry', crs=4326)
+	gdf.to_file(OUTPUT_PATH+'full_dataset_outputs.geojson', driver='GeoJSON')
 
 	return full_dataset
 
