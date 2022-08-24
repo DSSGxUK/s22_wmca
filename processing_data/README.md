@@ -52,12 +52,12 @@ data
 processing_data
 ├── 01_merge_EPC_energy_consumption.py	                  
 ├── 02_data_preprocessing
-│   ├── 01_data_cleaning.py
-│   ├── 02_cleaning_categorical_data.py
-│   ├── 03_CHAID.py
-│   ├── 04_encoding_categorical.py
-│   ├── 05_numerical_encoding.py
-│   └── 06_main.py
+│   ├── data_cleaning.py
+│   ├── cleaning_categorical_data.py
+│   ├── CHAID.py
+│   ├── encoding_categorical.py
+│   ├── numerical_encoding.py
+│   └── main.py
 ├── 03_get_proxies.py	
 ├── notebooks	
 └── plots	                                              # Saved plots from notebooks
