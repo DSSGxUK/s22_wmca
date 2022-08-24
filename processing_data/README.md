@@ -60,7 +60,7 @@ processing_data
 │   └── main.py
 ├── 03_get_proxies.py	
 ├── notebooks	
-└── plots	                                # Saved plots from notebooks
+└── plots                                 # Saved plots from notebooks
     
 ```
 
