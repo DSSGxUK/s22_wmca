@@ -60,6 +60,11 @@ solar pv
 `03_test_pv_output`
 1. Run to compare estimations for solar PV output
 
+### Summary of methods
+![1](https://user-images.githubusercontent.com/43257301/186498758-60dab711-c7a5-429b-b9eb-f321737e0543.png)
+![2](https://user-images.githubusercontent.com/43257301/186498767-b647aab9-7a3c-4e30-97ef-177c333adae8.png)
+![3](https://user-images.githubusercontent.com/43257301/186498768-6de5ce3a-e495-448c-9aa3-7563d11e24b3.png)
+
 ## Future Work
 The current methodology leaves much to be desired to get better estimates:
 - Acquire validation data for roof segments, aspect, slope and area
