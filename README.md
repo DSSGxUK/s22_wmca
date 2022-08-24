@@ -34,7 +34,9 @@ s22_wmca
 │   ├── multiclass_randomforest.py			            # Runs multiclass random forest and regression RF
 │   ├── combining_SQ_and_RandomForest_models.py	        # Combines SQ and RF models based on a set of criteria
 │   ├── combining_results_for_output.py		            # Combines all results and calculates additional load
-│   └── models								            # Folder for storing trained random forest models
+│   └── trained_models								    # Folder for storing trained random forest models
+│       ├── epc
+│       └── mainheat
 ├── network_capacity
 │   ├── aggregating_points_into_shape_files.py	        # Calculates total additional load for different station levels
 │   ├── comparing_station_headroom.py			        # Compares total additional loads to substation demand headrooms
