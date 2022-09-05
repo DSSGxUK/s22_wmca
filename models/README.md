@@ -20,10 +20,13 @@ Running this set of scripts will take the proceessed data created in the data_pr
 ## Data Requirements
 
 The `data/processed/` folder must contain:
+
 	- `merged_and_encoded_dataframe.csv` output by the `processing_proxies.py` script in the `data_preprocessing` folder.
+	
 	- `processed_EPC_data.csv` output from the `data_preprocessing/main.py` file
 
 The `data/raw/` folder must contain:
+
 	- 'demanddata_2017.csv' downloaded from [nationalgridESO - Historic Demand Data](https://data.nationalgrideso.com/demand/historic-demand-data).
 
 Additionally, it is HIGHLY RECCOMMENDED that this code is run in a virtual environment created using either the `requirements.txt` or `env.yml` files in the main directory. Scripts may not function properly, or at all, if not run in this environment.
@@ -31,7 +34,7 @@ Additionally, it is HIGHLY RECCOMMENDED that this code is run in a virtual envir
 
 ## Changing the Parameters
 
-There are some hard-coded varaible in place in these scripts that you may want to edit. Particularly the 'input_features' or 'features_to_keep' in the CONFIG dictonary at the top of several of the files in this folder. If the target area is changed from the West Midlands in the United Kingdom, where this was intially created to examine, these inputs will have to be changed to the appropriate names for the region being examined. 
+There are some hard-coded varaibles in place in these scripts that you may want to edit. Particularly the 'input_features' or 'features_to_keep' in the CONFIG dictonary at the top of several of the files in this folder. If the target area is changed from the West Midlands in the United Kingdom, where this was intially created to examine, these inputs will have to be changed to the appropriate names for the region being examined. 
 
 
 ## Running the Scripts
@@ -40,7 +43,7 @@ There are some hard-coded varaible in place in these scripts that you may want t
 DATA_PATH = 'data/processed/'
 OUTPUT_PATH = 'outputs/'
 ```
-at the beginning of each file. Outputs are saved to `outputs/` and models are saved to `models/'. Sub-directories are used for differentiating between epc results and heating type (mainheat) results where appropriate.
+at the beginning of each file. Outputs are saved to `outputs/` and models are saved to `models/`. Sub-directories are used for differentiating between epc results and heating type (mainheat) results where appropriate.
 
 
 
