@@ -26,7 +26,6 @@ The `data/processed/` folder must contain:
 	- `processed_EPC_data.csv` output from the `data_preprocessing/main.py` file
 
 The `data/raw/` folder must contain:
-
 	- 'demanddata_2017.csv' downloaded from [nationalgridESO - Historic Demand Data](https://data.nationalgrideso.com/demand/historic-demand-data).
 
 Additionally, it is HIGHLY RECCOMMENDED that this code is run in a virtual environment created using either the `requirements.txt` or `env.yml` files in the main directory. Scripts may not function properly, or at all, if not run in this environment.
