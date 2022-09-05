@@ -33,7 +33,7 @@ CONFIG = {
 np.random.seed(CONFIG['random_int'])
 
 
-def extract_and_concat():
+def loading_proxies():
 	'''Function to load and combine the seperate proxy files into
 		one dataframe. 
 
@@ -92,7 +92,7 @@ def main():
 			proxies (pd.dataframe): df of all the homes without an EPC rating
 			epc (pd.dataframe): df of all of the homes with an epc rating'''
 
-	tiles_df = extract_and_concat()
+	tiles_df = loading_proxies()
 
 	epc_df = loading_epc()
 
