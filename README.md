@@ -1,8 +1,8 @@
 # DSSGx-UK 2022 West Midlands Combined Authority/Pure Leapfrog Project
 
-Welcome to the repository for the Data Science for Social Good - UK 2022 WMCA/Pure Leapfrog project. This repository consists of four main sections covering the three main outcomes of the project and the data preprocessing. Detailed descriptions can be found in each of the sub directories. These will provide more detailed descriptsions of the folder contents and the required files for running the scripts in the folder. 
+Welcome to the repository for the Data Science for Social Good - UK 2022 WMCA/Pure Leapfrog project. This repository consists of four main sections covering the three main outcomes of the project and the data preprocessing. Detailed descriptions can be found in each of the sub directories. These will provide more detailed descriptions of the folder contents and the required files for running the scripts in the folder. 
 
-This main README file will take the user through setting up the virtual environment, and the process of running the scripts to replicate the project in it's entiretly. It will also contain breif descriptsions of each folder's objective for users who which to only replicate a particular part of the project. 
+This main README file will take the user through setting up the virtual environment, and the process of running the scripts to replicate the project in it's entiretly. It will also contain brief descriptions of each folder's objective for users who which to only replicate a particular part of the project. 
 
 ## Folder structure
 ```bash
