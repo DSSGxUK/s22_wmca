@@ -68,7 +68,7 @@ s22_wmca
 │   │   └── pvlib_output.py
 │   └── 03_test_pv_output					
 │       └── pv_test_set.ipynb  
-├── technical_docs                                      # All technical documentation for project
+└── technical_docs                                      # All technical documentation for project
     
 ```
 
