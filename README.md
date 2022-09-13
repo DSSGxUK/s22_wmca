@@ -174,5 +174,5 @@ python3 comparing_station_headroom.py
 The solar pv process invloves using a mix of python scripts and jupyter notebooks. User should see the README in the solar_pv folder for instructions on running the solar_pv process. 
 
 ## Technical_docs
-The technical_docs contain all the technical methodology of the project.It explains the use,functionality,creation and architecture of the project.This will serve as a "How-to" guide for users to know how the project works.
+The technical_docs contain all the technical methodology of the project.It explains the use,functionality,creation and architecture of the project.This will serve as a "How-to" guide for any user to know how the project works.
 
