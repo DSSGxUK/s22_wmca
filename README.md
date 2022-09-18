@@ -10,7 +10,11 @@ The team developed three models, listed below with links to sub-directories with
   2. Identifying solar-panel ready areas - [link](https://github.com/DSSGxUK/s22_wmca/tree/main/solar_pv)
   3. Determining the implications of switching homes to electric heating on the electrical network - [link](https://github.com/DSSGxUK/s22_wmca/tree/main/network_capacity)
 
-The outputs of these models were combined and fed into a Streamlit dashboard to allow our partners to interact with the results and integrate further data that helps them to identify the optimal areas to target.
+Using the outputs of the models, as well as the other data available, we deployed a Streamlit app for visualising and presenting the insights. A screenshot of the app is shown below.
+
+![alt text](https://github.com/DSSGxUK/s22_wmca/blob/main/images/streamlit_screenshot.jpg)
+
+There is a separate repository which explains the process for building the dashboard, which can be accessed [here](https://github.com/DSSGxUK/s22_wmca_app).
 
 This README takes the reader through an overview of the project and how to replicate it, including how to set up the virtual environment and the process of running the scripts. It also contains brief descriptions of each folder's objective for users who only wish to replicate a particular part of the project. Further details on how to run each model can be found in the READMEs within each of the sub directories. These provide more detailed descriptions of the folder contents and the required files for running the scripts.
 
@@ -61,14 +65,6 @@ Toi achieve the objective of identifying residential areas that are most suitabl
 3.	Estimating the implications of switching to electric heating on the electrical network in terms of additional network load
     - Using the EPC predictions, national electricity consumption and regional network capacity data, we calculated the maximum additional load on the electrical network for homes switching to electric heating.
     - Derived individual home energy usage from national energy statistics and estimated heating costs.
-
-### Dashboard
-
-Using the outputs of the models, as well as the other data available, we deployed a Streamlit app for visualising and presenting insights. A screenshot of the app is shown below.
-
-![alt text](https://github.com/DSSGxUK/s22_wmca/blob/main/images/streamlit_screenshot.jpg)
-
-There is a separate repository which explains the process for building the dashboard, which can be accessed [here](https://github.com/DSSGxUK/s22_wmca_app).
 
 ### Further Work
 
@@ -222,7 +218,7 @@ The individual files can be run if desired. The main file will output a combined
 
 ## Network Capacity
 
-Users should navigate to the network_capacity folder to run scripts in this section. That can be done by entering:
+Users should navigate to the [network_capacity](https://github.com/DSSGxUK/s22_wmca/tree/main/network_capacity) folder to run scripts in this section. That can be done by entering:
 
 ``` bash
 cd network_capacity
@@ -242,9 +238,20 @@ python3 comparing_station_headroom.py
 
 ## Solar_PV
 
-The solar pv process invloves using a mix of python scripts and jupyter notebooks. User should see the README in the solar_pv folder for instructions on running the solar_pv process. 
+The solar pv process invloves using a mix of python scripts and jupyter notebooks. User should see the README in the [solar_pv](https://github.com/DSSGxUK/s22_wmca/tree/main/solar_pv) folder for instructions on running the solar_pv process. 
 
-## Technical_docs
+## Technical Documentation
 
 The [technical_docs](https://github.com/DSSGxUK/s22_wmca/tree/main/technical_docs) contain all the technical methodology of the project. It explains the use, functionality, creation and architecture of the project. This will serve as a "How-to" guide for any user to know how the project works.
+
+## Contributors
+
+  - Li-Lian Ang – [GitHub](https://github.com/anglilian), [LinkedIn](https://www.linkedin.com/in/anglilian/)
+  - Michael Coughlan – [GitHub](https://github.com/mikecoughlan), [LinkedIn](https://www.linkedin.com/in/mike-k-coughlan/)
+  - Shriya C K Tarcar – [GitHub](https://github.com/shri3016), [LinkedIn](https://www.linkedin.com/search/results/all/?heroEntityKey=urn%3Ali%3Afsd_profile%3AACoAADMh2GgBFAcj2lb8uqM2iyu_dF9iiX62Spk&keywords=shriya%20c%20k%20tarcar&origin=RICH_QUERY_SUGGESTION&position=0&searchId=7c10cbb7-ab70-4c62-9ac5-fdf04d921079&sid=%40Oz)
+  - Meghna Asthana – [GitHub](https://github.com/asthanameghna), [LinkedIn](https://www.linkedin.com/in/meghna-asthana-1452b097/)
+
+In collaboration with: 
+  - Project Manager: Satyam Bhagwanani – [GitHub](https://github.com/sat899), [LinkedIn](https://www.linkedin.com/in/satyam-bhagwanani-934a243a/)
+  - Technical Mentor: Mihir Mehta – [GitHub](https://github.com/mihirpsu), [LinkedIn](https://www.linkedin.com/in/mihir79/)
 
