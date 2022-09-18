@@ -6,19 +6,19 @@ The objective of this project was to identify residential homes and areas in the
 
 The team developed three models, listed below with links to sub-directories with further details:
 
-    1. Predicting Energy Performance Certificate (EPC) ratings of 60% of homes in the West Midlands - [procesing_data](https://github.com/DSSGxUK/s22_wmca/tree/main/processing_data) and [models](https://github.com/DSSGxUK/s22_wmca/tree/main/models)
-    2. Identifying solar-panel ready areas - [link](https://github.com/DSSGxUK/s22_wmca/tree/main/solar_pv)
-    3. Determining the implications of switching homes to electric heating on the electrical network - [link](https://github.com/DSSGxUK/s22_wmca/tree/main/network_capacity)
+  1. Predicting Energy Performance Certificate (EPC) ratings of 60% of homes in the West Midlands - [procesing_data](https://github.com/DSSGxUK/s22_wmca/tree/main/processing_data) and [models](https://github.com/DSSGxUK/s22_wmca/tree/main/models)
+  2. Identifying solar-panel ready areas - [link](https://github.com/DSSGxUK/s22_wmca/tree/main/solar_pv)
+  3. Determining the implications of switching homes to electric heating on the electrical network - [link](https://github.com/DSSGxUK/s22_wmca/tree/main/network_capacity)
 
 The outputs of these models were combined and fed into a Streamlit dashboard to allow our partners to interact with the results and integrate further data that helps them to identify the optimal areas to target.
 
 This README takes the reader through an overview of the project and how to replicate it, including how to set up the virtual environment and the process of running the scripts. It also contains brief descriptions of each folder's objective for users who only wish to replicate a particular part of the project. Further details on how to run each model can be found in the READMEs within each of the sub directories. These provide more detailed descriptions of the folder contents and the required files for running the scripts.
 
 Other key resources to consult include:
-    - Streamlit app repository - [link](https://github.com/DSSGxUK/s22_wmca_app)
-    - Technical documentation - [link](https://github.com/DSSGxUK/s22_wmca/tree/main/technical_docs)
-    - Project poster - [link](https://github.com/DSSGxUK/s22_wmca/blob/main/images/DSSG%20Poster%20Presentation%20WMCA.pdf)
-    - Presentation video (to be added)
+  - Streamlit app repository - [link](https://github.com/DSSGxUK/s22_wmca_app)
+  - Technical documentation - [link](https://github.com/DSSGxUK/s22_wmca/tree/main/technical_docs)
+  - Project poster - [link](https://github.com/DSSGxUK/s22_wmca/blob/main/images/DSSG%20Poster%20Presentation%20WMCA.pdf)
+  - Presentation video (to be added)
 
 ### Presentation Video
 
