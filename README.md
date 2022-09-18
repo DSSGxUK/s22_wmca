@@ -47,7 +47,7 @@ A range of different data sources were used for the different models, which are 
 
 ### Methods
 
-To achieve the objective of identifying residential areas that are most suitable for retrofitting, three models were built. This section briefly explains each model and how it was developed. Further information is available in the [technical documentation](https://github.com/DSSGxUK/s22_wmca/tree/main/technical_docs).
+To achieve the objective of identifying residential areas that are most suitable for retrofitting, three models were built. This section briefly explains each model and how it was developed.
 
 1.	Predict the EPC ratings of the remaining 60% of houses in the West Midlands.
     - Merged EPC, Ordnance Survey Master Maps, fuel poverty and electricity consumption data and trained several machine learning models.
@@ -63,6 +63,10 @@ To achieve the objective of identifying residential areas that are most suitable
 3.	Estimate the implications of switching to electric heating on the electrical network in terms of additional network load
     - Using the EPC predictions, national electricity consumption and regional network capacity data, we calculated the maximum additional load on the electrical network for homes switching to electric heating.
     - Derived individual home energy usage from national energy statistics and estimated heating costs.
+
+### Technical Documentation
+
+The [technical_docs](https://github.com/DSSGxUK/s22_wmca/tree/main/technical_docs) contain further information on the technical methodology of the project. They explain the use, functionality, creation and architecture of the project and serve as a "How-to" guide for any user who wants to know how the models work in detail.
 
 ### Further Work
 
@@ -237,10 +241,6 @@ python3 comparing_station_headroom.py
 ## Solar_PV
 
 The solar pv process invloves using a mix of python scripts and jupyter notebooks. User should see the README in the [solar_pv](https://github.com/DSSGxUK/s22_wmca/tree/main/solar_pv) folder for instructions on running the solar_pv process. 
-
-## Technical Documentation
-
-The [technical_docs](https://github.com/DSSGxUK/s22_wmca/tree/main/technical_docs) contain all the technical methodology of the project. It explains the use, functionality, creation and architecture of the project. This will serve as a "How-to" guide for any user to know how the project works.
 
 ## Contributors
 
