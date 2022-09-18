@@ -2,7 +2,7 @@
 
 Welcome to the repository for the Data Science for Social Good UK 2022 project with the **West Midlands Combined Authority** & **PureLeapfrog**.
 
-The objective of this project was to identify residential homes and areas in the West Midlands that are situatable for retrofitting interventions (e.g. installing solar panels or heat pumps) to improve their energy efficiency.
+The objective of this project was to identify residential homes and areas in the West Midlands that are suitable for retrofitting interventions (e.g. installing solar panels or heat pumps) to improve their energy efficiency.
 
 The team developed three models, listed below with links to sub-directories with further details:
 
