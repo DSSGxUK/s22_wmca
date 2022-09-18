@@ -1,8 +1,83 @@
-# DSSGx-UK 2022 West Midlands Combined Authority/Pure Leapfrog Project
+# DSSGx-UK 2022 Identifying Residential Areas in the West Midlands that are Most Suitable for Retrofitting
 
-Welcome to the repository for the Data Science for Social Good - UK 2022 WMCA/Pure Leapfrog project. This repository consists of four main sections covering the three main outcomes of the project and the data preprocessing. Detailed descriptions can be found in each of the sub directories. These will provide more detailed descriptions of the folder contents and the required files for running the scripts in the folder. 
+Welcome to the repository for the Data Science for Social Good UK 2022 project with the **West Midlands Combined Authority** & **PureLeapfrog**.
 
-This main README file will take the user through setting up the virtual environment, and the process of running the scripts to replicate the project in it's entiretly. It will also contain brief descriptions of each folder's objective for users who which to only replicate a particular part of the project. 
+The objective of this project was to identify residential homes and areas in the West Midlands that are situatable for retrofitting interventions (e.g. installing solar panels or heat pumps) to improve their energy efficiency.
+
+The team developed three models, listed below with links to sub-directories with further details:
+
+    1. Predicting Energy Performance Certificate (EPC) ratings of 60% of homes in the West Midlands - [procesing_data](https://github.com/DSSGxUK/s22_wmca/tree/main/processing_data) and [models](https://github.com/DSSGxUK/s22_wmca/tree/main/models)
+    2. Identifying solar-panel ready areas - [link](https://github.com/DSSGxUK/s22_wmca/tree/main/solar_pv)
+    3. Determining the implications of switching homes to electric heating on the electrical network - [link](https://github.com/DSSGxUK/s22_wmca/tree/main/network_capacity)
+
+The outputs of these models were combined and fed into a Streamlit dashboard to allow our partners to interact with the results and integrate further data that helps them to identify the optimal areas to target.
+
+This README takes the reader through an overview of the project and how to replicate it, including how to set up the virtual environment and the process of running the scripts. It also contains brief descriptions of each folder's objective for users who only wish to replicate a particular part of the project. Further details on how to run each model can be found in the READMEs within each of the sub directories. These provide more detailed descriptions of the folder contents and the required files for running the scripts.
+
+Other key resources to consult include:
+    - Streamlit app repository - [link](https://github.com/DSSGxUK/s22_wmca_app)
+    - Technical documentation - [link](https://github.com/DSSGxUK/s22_wmca/tree/main/technical_docs)
+    - Project poster - [link](https://github.com/DSSGxUK/s22_wmca/blob/main/images/DSSG%20Poster%20Presentation%20WMCA.pdf)
+    - Presentation video (to be added)
+
+### Presentation Video
+
+To Be Added
+
+### Partners
+
+[West Midlands Combined Authority](https://www.wmca.org.uk/) represents eighteen local authorities and three Local Enterprise Partnerships and seeks to make the West Midlands a better place to live through growth, regeneration, and better infrastructure. WMCA are aiming for a 36% reduction in carbon emissions across local transport, homes, and businesses by 2026 and hope to achieve 100% carbon neutrality by 2041.
+
+[PureLeapfrog](https://www.pureleapfrog.org/) is a charity that aims to enable positive social, environmental, and financial impact for communities, in particular those in deprivation by enabling their participation in and benefit from, an energy system in transition to lower carbon intensity.
+
+### Challenge
+
+With limited resources and stretched budgets, to achieve their net-zero ambitions WMCA and PureLeapfrog recognised the need to think outside the box. They approached DSSG UK and proposed a data-driven approach to identify residential areas that would benefit the most from retrofitting interventions. By identifying these areas, the authority will be able to target resources (such as grants) and incentivize homeowners to upgrade their properties and become more energy efficient.
+
+However, doing this identification posed several challenges, namely that:
+    - Energy Performance Certificate (EPC) ratings and are only available for 40% of the 1.2 million homes in the West Midlands. 
+    - It is unclear how to assess the expected improvement of certain interventions, and which are likely to benefit the most (e.g. which homes are likely to produce the most clean-energy output by installing solar panels)
+    - It is not clear what the implications of switching homes to solar panels and electric heat pumps would be on the electrical network.
+    
+### Data
+
+A range of different data sources were used for the different models, which are explained in detail in the READMEs within the sub-directories. Some of these datasets were publicly available such as the EPC data. Others were licensed such as Ordnance Survey Maps data. Most local authorities should have access to the datasets required already.
+
+### Methods
+
+Toi achieve the objective of identifying residential areas that are most suitable for retrofitting, three models were built. This section briefly explains each model and how it was developed. Further information is available in the technical documentation.
+
+1.	Predicting EPC ratings of the remaining 60% of houses in the West Midlands.
+    - Merged EPC, Ordnance Survey Master Maps, fuel poverty and electricity consumption data and trained several machine learning models.
+    - Each model was trained to predict the EPC rating and heating type of houses using data available for all homes (i.e. floor area, height, address).
+    - Selected the best model on F-1 and accuracy scores and by assessing performance on lower rated houses.
+    - A similarity quantification (SQ) model was developed to make predictions based on how similar a house is to another house that already has an EPC rating. The SQ model was combined with the machine learning models to improve accuracy.
+
+2.	Identifying solar panel-ready areas / estimating potential solar PV output
+    - Segmented house rooves for areas with a DSM layer using Digital Surface Model (DSM) data and Ordnance Survey Maps.
+    - Estimated shading on roofs from other buildings, creating a pseudo-DSM where necessary.
+    - Calculated estimated solar PV output using the formula from the Microgeneration Certification Scheme (MCS).
+
+3.	Estimating the implications of switching to electric heating on the electrical network in terms of additional network load
+    - Using the EPC predictions, national electricity consumption and regional network capacity data, we calculated the maximum additional load on the electrical network for homes switching to electric heating.
+    - Derived individual home energy usage from national energy statistics and estimated heating costs.
+
+### Dashboard
+
+Using the outputs of the models, as well as the other data available, we deployed a Streamlit app for visualising and presenting insights. A screenshot of the app is shown below.
+
+![alt text](https://github.com/DSSGxUK/s22_wmca/blob/main/images/streamlit_screenshot.jpg)
+
+There is a separate repository which explains the process for building the dashboard, which can be accessed [here](https://github.com/DSSGxUK/s22_wmca_app).
+
+### Further Work
+
+We encourage other councils in the UK to adopt and improve on the open-source pipeline and visualisation tools we have developed, to guide evidence-based policy-making and urban planning. 
+
+There are several ways the tool can be used, for example:
+    - To identify areas with houses that should be targeted for retrofitting.
+    - The solar PV output estimations can guide policies for potential funding or subsidies to different areas.
+    - Energy capacity calculations can inform which areas might cause electrical grid issues during planning.
 
 ## Folder structure
 ```bash
@@ -114,7 +189,6 @@ This will create an environment called 'project_env'. Activation of this environ
 ```bash
 conda activate project_env
 ``` 
-
 ## Running the processing_data files
 
 Once the environment has been created and activated the scripts in the `processing_data` file can be run. Files in this section should be run from the main directory. The file `processing_data/01_merge_EPC_energy_consumption.py` should be run first. To run:
@@ -146,7 +220,6 @@ python3 models/06_main.py
 ```
 The individual files can be run if desired. The main file will output a combined csv file which contains the predicted and real EPC data. This file will contain the ratings (A-G and 0-100), the predicted heating type (0 for non-electric or 1 for electric), a level of confidence for the predictions, a level of confidence for the EPC ratings being withing one rating of teh predicted value, and the calculated additional load the home will put on the electrical network if it converts from a non-electical heating source to an electrical one. This value will be used in the network_capactiy files. The models will be saved in the `models/models/` folder. The user could consider changing the hyperparameters used in the RandomForest model. Due to computational constraints, the model used in our project only had 200 n_estimators. Performance could be improved by increasing the n_estimators to 1000 or more if user has the capacity. 
 
-
 ## Network Capacity
 
 Users should navigate to the network_capacity folder to run scripts in this section. That can be done by entering:
@@ -167,12 +240,11 @@ The `comparing_station_headroom.py` file compares the aggregated values for the 
 python3 comparing_station_headroom.py
 ```
 
-
-
 ## Solar_PV
 
 The solar pv process invloves using a mix of python scripts and jupyter notebooks. User should see the README in the solar_pv folder for instructions on running the solar_pv process. 
 
 ## Technical_docs
-The technical_docs contain all the technical methodology of the project.It explains the use,functionality,creation and architecture of the project.This will serve as a "How-to" guide for any user to know how the project works.
+
+The [technical_docs](https://github.com/DSSGxUK/s22_wmca/tree/main/technical_docs) contain all the technical methodology of the project. It explains the use, functionality, creation and architecture of the project. This will serve as a "How-to" guide for any user to know how the project works.
 
