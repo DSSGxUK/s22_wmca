@@ -47,20 +47,20 @@ A range of different data sources were used for the different models, which are 
 
 ### Methods
 
-Toi achieve the objective of identifying residential areas that are most suitable for retrofitting, three models were built. This section briefly explains each model and how it was developed. Further information is available in the technical documentation.
+To achieve the objective of identifying residential areas that are most suitable for retrofitting, three models were built. This section briefly explains each model and how it was developed. Further information is available in the [technical documentation](https://github.com/DSSGxUK/s22_wmca/tree/main/technical_docs).
 
-1.	Predicting EPC ratings of the remaining 60% of houses in the West Midlands.
+1.	Predict the EPC ratings of the remaining 60% of houses in the West Midlands.
     - Merged EPC, Ordnance Survey Master Maps, fuel poverty and electricity consumption data and trained several machine learning models.
     - Each model was trained to predict the EPC rating and heating type of houses using data available for all homes (i.e. floor area, height, address).
     - Selected the best model on F-1 and accuracy scores and by assessing performance on lower rated houses.
     - A similarity quantification (SQ) model was developed to make predictions based on how similar a house is to another house that already has an EPC rating. The SQ model was combined with the machine learning models to improve accuracy.
 
-2.	Identifying solar panel-ready areas / estimating potential solar PV output
-    - Segmented house rooves for areas with a DSM layer using Digital Surface Model (DSM) data and Ordnance Survey Maps.
+2.	Identify solar panel-ready areas / estimate potential solar PV output
+    - Segmented house roofs for areas with a DSM layer using Digital Surface Model (DSM) data and Ordnance Survey Maps.
     - Estimated shading on roofs from other buildings, creating a pseudo-DSM where necessary.
     - Calculated estimated solar PV output using the formula from the Microgeneration Certification Scheme (MCS).
 
-3.	Estimating the implications of switching to electric heating on the electrical network in terms of additional network load
+3.	Estimate the implications of switching to electric heating on the electrical network in terms of additional network load
     - Using the EPC predictions, national electricity consumption and regional network capacity data, we calculated the maximum additional load on the electrical network for homes switching to electric heating.
     - Derived individual home energy usage from national energy statistics and estimated heating costs.
 
@@ -69,9 +69,9 @@ Toi achieve the objective of identifying residential areas that are most suitabl
 We encourage other councils in the UK to adopt and improve on the open-source pipeline and visualisation tools we have developed, to guide evidence-based policy-making and urban planning. 
 
 There are several ways the tool can be used, for example:
-    - To identify areas with houses that should be targeted for retrofitting.
-    - The solar PV output estimations can guide policies for potential funding or subsidies to different areas.
-    - Energy capacity calculations can inform which areas might cause electrical grid issues during planning.
+  - To identify areas with houses that should be targeted for retrofitting.
+  - The solar PV output estimations can guide policies for potential funding or subsidies to different areas.
+  - Energy capacity calculations can inform which areas might cause electrical grid issues during planning.
 
 ## Folder structure
 ```bash
