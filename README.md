@@ -21,10 +21,13 @@ This README takes the reader through an overview of the project and how to repli
 Other key resources to consult include:
   - Technical documentation - [link](https://github.com/DSSGxUK/s22_wmca/tree/main/technical_docs)
   - Project poster - [link](https://github.com/DSSGxUK/s22_wmca/blob/main/images/DSSG%20Poster%20Presentation%20WMCA.pdf)
+  - Presentation video - [link](https://www.youtube.com/watch?v=q7xHTCGEwCI)
 
 ### Presentation Video
 
-To Be Added
+<p align="center">
+  <a href="https://www.youtube.com/watch?v=q7xHTCGEwCI" target="_blank"><img src="https://github.com/DSSGxUK/s22_wmca/blob/main/images/video1.JPG" /></a>
+</p>
 
 ### Partners
 
